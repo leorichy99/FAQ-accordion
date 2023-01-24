@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FAQ Accordion" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+</head>
+
+<body style="overflow-y: auto" tabindex="0">
+  <main class="container">
+    
+    <!-- woman online mobile -->
+    <img src="./images/illustration-woman-online-mobile.svg" alt="illustration woman online mobile"
+      class="woman_online_mobile" />
+
+    <div class="faq_container">
+      <!-- accordion images -->
+      <div class="accordion_imgs">
+        <!-- box image -->
+        <img src="./images/illustration-box-desktop.svg" alt="illustration box desktop" class="box" />
+
+        <!-- woman online desktop -->
+        <img src="./images/illustration-woman-online-desktop.svg" alt="illustration woman online desktop"
+          class="woman_online_desktop" />
+      </div>
+
+      <!-- faq -->
+      <div class="faq_section">
+        <h1>FAQ</h1>
+
+        <!-- Accordion -->
+        <div class="accordion">
+          <!-- question1 & ans -->
+          <div class="q1_ans question_answer">
+            <div class="head">
+              <h2>How many team members can I invite?</h2>
+              <img src="./images/icon-arrow-down.svg" alt="down arrow icon" class="arrow_img" />
+            </div>
+
+            <div class="ans ans-1">
+              <p>
+                You can invite up to 2 additional users on the Free plan.
+                There is no limit on team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+
+          <!-- question2 & ans -->
+          <div class="q2_ans question_answer">
+            <div class="head">
+              <h2>What is the maximum file upload size?</h2>
+              <img src="./images/icon-arrow-down.svg" alt="down arrow icon" class="arrow_img" />
+            </div>
+
+            <div class="ans ans-2">
+              <p>
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
+          </div>
+
+          <!-- question3 & ans -->
+          <div class="q3_ans question_answer">
+            <div class="head">
+              <h2>How do I reset my password?</h2>
+              <img src="./images/icon-arrow-down.svg" alt="down arrow icon" class="arrow_img" />
+            </div>
+
+            <div class="ans ans-3">
+              <p>
+                Click “Forgot password” from the login page or “Change
+                password” from your profile page. A reset link will be emailed
+                to you.
+              </p>
+            </div>
+          </div>
+
+          <!-- question4 & ans -->
+          <div class="q4_ans question_answer">
+            <div class="head">
+              <h2>Can I cancel my subscription?</h2>
+              <img src="./images/icon-arrow-down.svg" alt="down arrow icon" class="arrow_img" />
+            </div>
+
+            <div class="ans ans-4">
+              <p>
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
+          </div>
+
+          <!-- question5 & ans -->
+          <div class="q5_ans question_answer">
+            <div class="head">
+              <h2>Do you provide additional support?</h2>
+              <img src="./images/icon-arrow-down.svg" alt="down arrow icon" class="arrow_img" />
+            </div>
+
+            <div class="ans ans-5">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const heads = document.querySelectorAll(".head");
+
+    heads.forEach((head) =>
+      head.addEventListener("click", () => {
+        // toggle show_ans class on all question_answers (q_a) boxes
+        head.parentElement.classList.toggle("show_ans");
+      })
+    );
+
+  </script>
+</body>
+
+</html>

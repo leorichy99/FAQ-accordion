@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Barlow:wght@600&family=Epilogue:wght@500;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@500;600;700&family=Libre+Franklin:wght@300;600;700&family=Manrope:wght@500;700&family=Plus+Jakarta+Sans&family=Rubik:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --divider-color: hsl(240, 5%, 91%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --black: hsl(0, 0%, 0%);
+}
+
+img,.head h2{
+  transition: .5s ease;
+}
+
+/* --------------------------------------------------------------- */
+
+body,html{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body,.faq_container{
+  overflow-x: hidden;
+}
+
+.container,
+.faq_container,
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.head,
+.faq_container {
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(to right, var(--soft-violet), var(--soft-blue));
+  justify-content: center;
+}
+
+.faq_container {
+  padding: 0 70px 0 0;
+  max-width: 1000px;
+  border-radius: 30px;
+  background: url("./images/bg-pattern-desktop.svg") #fff left -230px center / 650px
+    no-repeat;
+    box-shadow: 10px -10px 20px hsla(251, 47%, 50%, 0.194), -10px 10px 20px hsla(251, 47%, 50%, 0.194);
+}
+
+/* accordion imgs */
+.accordion_imgs {
+  padding: 30px 0;
+  height: 100%;
+}
+
+.accordion_imgs:hover .box{
+  transform: translate(-92px, 125px);
+}
+
+.woman_online_desktop {
+  transform: translate(-80px, 0);
+}
+
+.woman_online_mobile {
+  display: none;
+}
+
+.box {
+  transform: translate(-92px, 135px);
+  position: absolute;
+  z-index: 10;
+}
+
+/* faq section */
+.faq_section {
+  height: 100%;
+  padding: 30px 0 15px 0;
+  cursor: pointer;
+}
+
+.faq_section h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Question_Answer section */
+.question_answer {
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.question_answer,.question_answer p,
+.head,.faq_section h1{
+  margin-bottom: 20px;
+}
+
+.head h2 {
+  font-size: 1.1rem;
+  color: var(--very-dark-grayish-blue);
+  font-weight: 500;
+}
+
+.arrow_img {
+  transform: rotate(0);
+}
+
+p {
+  color: var(--dark-grayish-blue);
+}
+
+/* state classes */
+.question_answer.show_ans {
+  height: 100%;
+}
+
+.question_answer.show_ans .head h2{
+  color: var(--black);
+}
+
+.head:hover h2 {
+  color: var(--soft-red);
+}
+
+.question_answer.show_ans .head h2:hover{
+  color: var(--soft-red);
+}
+
+.question_answer.show_ans .arrow_img{
+  transform: rotate(180deg);
+}
+
+/* Responsiveness 🔥 */
+@media (max-width: 850px) {
+  .container{
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .faq_container {
+    max-width: 100%;
+    padding: 150px 30px 30px;
+    flex-direction: column;
+    background: url("./images/bg-pattern-mobile.svg") #fff top center / 300px
+      no-repeat;
+      position: relative;
+    top: -80px;
+  }
+
+  .box,
+  .woman_online_desktop,.accordion_imgs{
+    display: none;
+  }
+
+  .woman_online_mobile {
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    bottom: -50px;
+    z-index: 30;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 850px) {
+  .faq_container {
+    background: url("./images/bg-pattern-mobile.svg") #fff top center / 400px
+      no-repeat;
+      top: -100px;
+  }
+
+  .woman_online_mobile {
+    height: 400px;
+    width: 400px;
+    bottom: -70px;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1030px) {
+  .faq_container {
+    max-width: 850px;
+  }
+
+  .question_answer{
+    height: 50px;
+  }
+
+  .head{
+    margin-bottom: 30px;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .container{
+    padding: 30px 15px;
+  }
+
+  .faq_container {
+    padding: 150px 20px 30px;
+  }
+}
